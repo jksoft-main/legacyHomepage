@@ -1,0 +1,560 @@
+/* index.css - Retro early-internet theme stylesheet */
+
+/* Import Retro-style Fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=DotGothic16&family=VT323&display=swap');
+
+:root {
+  /* Default Colors (Raw Theme style) */
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --link-color: #0000ee;
+  --link-visited: #551a8b;
+  --border-color: #808080;
+  --frame-bg: #f0f0f0;
+  --title-bg: #000080;
+  --title-text: #ffffff;
+  --font-family: "MS PGothic", "Hiragino Kaku Gothic Pro W3", sans-serif;
+  --border-style: 2px inset #ffffff;
+}
+
+/* ==========================================================================
+   Themes Configuration
+   ========================================================================== */
+
+/* 1. Raw Abe Hiroshi Style Theme */
+body.theme-raw {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --link-color: #0000ee;
+  --link-visited: #551a8b;
+  --border-color: #0000ff;
+  --frame-bg: #e6f2ff;
+  --font-family: "MS PGothic", "Hiragino Kaku Gothic Pro W3", "Times New Roman", serif;
+  background-color: var(--bg-color);
+  font-size: 16px;
+}
+body.theme-raw .frame-border {
+  border: 4px ridge #e6f2ff;
+}
+
+/* 2. Vaporwave Cyber-Retro Theme */
+body.theme-vaporwave {
+  --bg-color: #120136;
+  --text-color: #00ffcc;
+  --link-color: #ff007f;
+  --link-visited: #9b51e0;
+  --border-color: #ff007f;
+  --frame-bg: #03001e;
+  --title-bg: #ff007f;
+  --title-text: #00ffcc;
+  --font-family: 'VT323', 'DotGothic16', monospace;
+  background-color: var(--bg-color);
+  background-image: linear-gradient(180deg, rgba(18, 1, 54, 0.9) 0%, rgba(3, 0, 30, 0.95) 100%), 
+                    linear-gradient(90deg, rgba(255,0,127,0.05) 1px, transparent 1px), 
+                    linear-gradient(rgba(255,0,127,0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+  color: var(--text-color);
+  text-shadow: 0 0 5px rgba(0, 255, 204, 0.6), 0 0 10px rgba(0, 255, 204, 0.4);
+}
+body.theme-vaporwave .frame-border {
+  border: 3px solid #ff007f;
+  box-shadow: 0 0 10px #ff007f, inset 0 0 10px #ff007f;
+}
+body.theme-vaporwave a {
+  text-shadow: 0 0 5px rgba(255, 0, 127, 0.6);
+}
+
+/* 3. Windows 95 Desktop Theme */
+body.theme-win95 {
+  --bg-color: #5a7f7c; /* Classic Teal Desktop */
+  --text-color: #000000;
+  --link-color: #000080;
+  --link-visited: #800080;
+  --border-color: #808080;
+  --frame-bg: #c0c0c0; /* Classic Win95 gray */
+  --title-bg: #000080;
+  --title-text: #ffffff;
+  --font-family: "Courier New", "DotGothic16", monospace;
+  background-color: var(--bg-color);
+}
+body.theme-win95 .win95-window {
+  background-color: #c0c0c0;
+  border-top: 2px solid #dfdfdf;
+  border-left: 2px solid #dfdfdf;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+  box-shadow: 1px 1px 0px 0px #000000;
+  padding: 3px;
+}
+body.theme-win95 .win95-window-title {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: #ffffff;
+  font-weight: bold;
+  padding: 3px 6px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body.theme-win95 .win95-window-body {
+  padding: 10px;
+  background-color: #c0c0c0;
+}
+body.theme-win95 .frame-border {
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-right: 2px solid #dfdfdf;
+  border-bottom: 2px solid #dfdfdf;
+  background-color: #ffffff;
+}
+
+/* ==========================================================================
+   Global Reset and Layout
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+a:visited {
+  color: var(--link-visited);
+}
+a:hover {
+  color: #ff0000;
+  background-color: yellow;
+}
+
+/* Simulated Frameset Wrapper */
+#frameset-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+/* Header Banner containing Scrolling Marquee */
+#marquee-header {
+  height: 40px;
+  background-color: var(--frame-bg);
+  border-bottom: 3px ridge var(--border-color);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* Simulated split content pane */
+#main-frameset {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Left Navigation Sidebar (Simulated Menu Frame) */
+#menu-frame {
+  width: 220px;
+  min-width: 180px;
+  max-width: 350px;
+  background-color: var(--frame-bg);
+  border-right: 4px ridge var(--border-color);
+  overflow-y: auto;
+  padding: 10px;
+  height: 100%;
+  flex-shrink: 0;
+  z-index: 5;
+}
+
+/* Resize bar simulator */
+#resize-handle {
+  width: 6px;
+  cursor: col-resize;
+  background-color: var(--border-color);
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  z-index: 6;
+}
+#resize-handle:hover, #resize-handle.active {
+  opacity: 1;
+  background-color: #ff0000;
+}
+
+/* Right Content Area (Simulated Main Content Frame) */
+#content-frame {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  height: 100%;
+  background-color: var(--bg-color);
+}
+
+/* ==========================================================================
+   Retro Decorative Elements
+   ========================================================================== */
+
+/* Access Counter Digit Styling */
+.counter-box {
+  display: inline-flex;
+  background-color: #000;
+  border: 3px inset #808080;
+  padding: 4px 6px;
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  letter-spacing: 2px;
+  border-radius: 3px;
+  margin: 5px 0;
+}
+.theme-raw .counter-box {
+  background-color: #ffffff;
+  color: #ff0000;
+  border: 2px solid #000000;
+}
+.theme-vaporwave .counter-box {
+  background-color: #000;
+  color: #00ffcc;
+  border-color: #ff007f;
+  box-shadow: 0 0 5px #00ffcc;
+}
+.theme-win95 .counter-box {
+  background-color: #000;
+  color: #00ff00;
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-right: 2px solid #dfdfdf;
+  border-bottom: 2px solid #dfdfdf;
+}
+
+/* Classic Neon/Glow Effects for Vaporwave */
+.glow-text {
+  text-shadow: 0 0 8px currentColor;
+}
+
+/* Animated Marquee (CSS fallbacks) */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.marquee-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee-scroll 20s linear infinite;
+  font-weight: bold;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
+
+/* Classic HTML Table Styles */
+table.retro-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 15px;
+}
+table.retro-table th, table.retro-table td {
+  border: 1px solid var(--text-color);
+  padding: 6px 10px;
+  text-align: left;
+}
+table.retro-table th {
+  background-color: var(--frame-bg);
+}
+.theme-win95 table.retro-table {
+  border: 2px solid #000;
+}
+.theme-win95 table.retro-table th {
+  background-color: #d0d0d0;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #808080;
+  border-bottom: 1px solid #808080;
+}
+
+/* Welcome Graphic Text banner */
+.welcome-banner {
+  text-align: center;
+  font-size: 32px;
+  font-family: 'VT323', 'DotGothic16', sans-serif;
+  margin: 15px 0;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #ff007f, #00ffcc, #ff007f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: color-flow 4s linear infinite;
+}
+.theme-raw .welcome-banner {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  color: #ff0000;
+  font-family: "MS PGothic", sans-serif;
+  font-weight: bold;
+}
+@keyframes color-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Under Construction Banner styling */
+.construction-zone {
+  border: 4px dashed #ffd700;
+  background-color: #000;
+  color: #ffd700;
+  padding: 15px;
+  text-align: center;
+  font-family: 'VT323', 'DotGothic16', monospace;
+  margin: 20px 0;
+}
+.theme-raw .construction-zone {
+  border: 2px dashed #ff0000;
+  background-color: #ffffcc;
+  color: #ff0000;
+}
+
+/* ==========================================================================
+   CRT/Scanline Overlay (Vaporwave style)
+   ========================================================================== */
+#crt-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 4px, 6px 100%;
+  z-index: 9999;
+  pointer-events: none;
+  display: none;
+}
+body.theme-vaporwave #crt-overlay {
+  display: block;
+}
+
+/* Flicker animation for Vaporwave CRT */
+@keyframes crt-flicker {
+  0% { opacity: 0.985; }
+  50% { opacity: 0.995; }
+  100% { opacity: 0.985; }
+}
+
+/* ==========================================================================
+   BGM Control Dashboard
+   ========================================================================== */
+.bgm-widget {
+  margin: 15px 0;
+  padding: 8px;
+  border: 2px inset var(--border-color);
+  background-color: var(--frame-bg);
+  text-align: center;
+}
+.bgm-btn {
+  background-color: var(--frame-bg);
+  border: 2px outset var(--border-color);
+  cursor: pointer;
+  padding: 3px 8px;
+  font-family: inherit;
+  font-weight: bold;
+}
+.bgm-btn:active {
+  border-style: inset;
+}
+.theme-vaporwave .bgm-btn {
+  border-color: #ff007f;
+  color: #ff007f;
+  background-color: #03001e;
+  box-shadow: 0 0 5px #ff007f;
+}
+
+/* ==========================================================================
+   88x31 Badges Panel
+   ========================================================================== */
+.badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 15px;
+  justify-content: center;
+}
+.badge-item {
+  width: 88px;
+  height: 31px;
+  border: 1px solid var(--text-color);
+  background-color: #000;
+  color: #fff;
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+.badge-ie { background: linear-gradient(to right, #0080c0, #004080); color: #fff; }
+.badge-ns { background: linear-gradient(to right, #000040, #000080); color: #ff8000; }
+.badge-notepad { background: #fff; color: #000; border: 1px solid #808080; }
+.badge-valid { background: #3c763d; color: #fff; }
+.badge-any { background: #a94442; color: #fff; }
+
+/* ==========================================================================
+   Guestbook Design
+   ========================================================================== */
+.guestbook-post {
+  border: 2px solid var(--border-color);
+  background-color: var(--frame-bg);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.guestbook-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+.guestbook-body {
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+.guestbook-form {
+  border: 2px inset var(--border-color);
+  padding: 15px;
+  background-color: var(--frame-bg);
+  margin-bottom: 20px;
+}
+.form-group {
+  margin-bottom: 10px;
+}
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.form-input {
+  width: 100%;
+  padding: 5px;
+  font-family: inherit;
+  border: 1px solid var(--border-color);
+}
+.form-textarea {
+  width: 100%;
+  height: 80px;
+  padding: 5px;
+  font-family: inherit;
+  border: 1px solid var(--border-color);
+  resize: vertical;
+}
+
+/* Win95 Windowed frames container for styling tabs */
+.content-section {
+  display: none;
+  animation: fadeIn 0.2s ease-in-out;
+}
+.content-section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Floating Theme Switcher Widget */
+#theme-selector-widget {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000;
+  font-size: 11px;
+}
+
+.theme-selector-btn {
+  cursor: pointer;
+  border: 2px outset #dfdfdf;
+  background-color: #c0c0c0;
+  color: #000;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-family: monospace;
+}
+.theme-selector-btn:active {
+  border-style: inset;
+}
+
+/* Layout for Profile details */
+.profile-photo-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.profile-photo {
+  width: 150px;
+  border: 3px double var(--border-color);
+  padding: 3px;
+  background-color: var(--frame-bg);
+}
+.profile-details {
+  flex: 1;
+}
+
+/* General Layout utilities */
+.text-center { text-align: center; }
+.text-danger { color: #ff0000; }
+.blink {
+  animation: blink-animation 1.5s steps(2, start) infinite;
+}
+@keyframes blink-animation {
+  to { visibility: hidden; }
+}
+
+/* Scrollbar customization */
+body.theme-win95 *::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+body.theme-win95 *::-webkit-scrollbar-track {
+  background: #dfdfdf;
+  box-shadow: inset 1px 1px 0px #808080;
+}
+body.theme-win95 *::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-top: 1.5px solid #fff;
+  border-left: 1.5px solid #fff;
+  border-right: 1.5px solid #808080;
+  border-bottom: 1.5px solid #808080;
+}
+
+body.theme-vaporwave *::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+body.theme-vaporwave *::-webkit-scrollbar-track {
+  background: #03001e;
+}
+body.theme-vaporwave *::-webkit-scrollbar-thumb {
+  background: #ff007f;
+  box-shadow: 0 0 5px #ff007f;
+}

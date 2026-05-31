@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【公式】ちひろ♂のぺーじにようこそ！</title>
+  <meta name="description" content="ちひろ♂のホームページです。インターネット初期を徹底再現した超高速ロード対応ホームページです。アクセスカウンター、キリ番掲示板、MIDI風BGM完備。">
+  <link rel="stylesheet" href="index.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="theme-raw">
+
+  <!-- CRT Screen Scanline Overlay (visible in Vaporwave theme) -->
+  <div id="crt-overlay"></div>
+
+  <!-- Main Frameset Simulation Container -->
+  <div id="frameset-container">
+    
+    <!-- Top Scrolling Marquee Header -->
+    <header id="marquee-header">
+      <div class="marquee-container">
+        <span class="marquee-content">
+          ★☆ 祝・ホームページ開設！ ☆★ 当サイトはちひろ♂のぺーじです。懐かしのレイアウトを現代風に磨き上げた「極上のレトロホームページ」です。アクセスカウンター、キリ番掲示板、Web Audio APIによる8bitレトロBGMも再生可能！左メニューからBGMを再生してお楽しみください。 相互リンク募集中！メールはメールソフトから送信してください。 ★☆
+        </span>
+      </div>
+    </header>
+
+    <!-- Simulated Split Frame Area -->
+    <div id="main-frameset">
+      
+      <!-- LEFT FRAME: Navigation Menu -->
+      <nav id="menu-frame">
+        <div style="text-align: center; border-bottom: 2px dashed var(--border-color); padding-bottom: 10px; margin-bottom: 15px;">
+          <h2 style="font-size: 16px; margin: 5px 0;">ちひろ♂の電脳門</h2>
+          <span style="font-size: 10px; color: #888;">Since: 2026/06/01</span>
+        </div>
+
+        <!-- Navigation Links -->
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+          <a href="#" class="menu-nav-link" data-target="sec-top" style="font-weight: bold;">🏠 トップページ</a>
+          <a href="#" class="menu-nav-link" data-target="sec-profile">👤 自己紹介</a>
+          <a href="#" class="menu-nav-link" data-target="sec-guestbook">📝 キリ番掲示板</a>
+          <a href="#" class="menu-nav-link" data-target="sec-links">🔗 お気に入りリンク</a>
+        </div>
+
+        <br>
+        <hr style="border: 1px inset var(--border-color);">
+
+        <!-- Access Counter Widget -->
+        <div style="text-align: center; margin: 15px 0;">
+          <div style="font-size: 12px; font-weight: bold; margin-bottom: 5px;">
+            アクセスカウンター
+          </div>
+          <div class="counter-box" id="access-counter">000000</div>
+          <div style="font-size: 9px; margin-top: 3px;">
+            (キリ番踏んだら掲示板へ！)
+          </div>
+        </div>
+
+        <hr style="border: 1px inset var(--border-color);">
+
+        <!-- BGM Synthesizer Widget -->
+        <div class="bgm-widget">
+          <div style="font-size: 12px; font-weight: bold; margin-bottom: 5px;">🎵 MIDI BGM 🎵</div>
+          <button class="bgm-btn" id="bgm-toggle-btn">▶️ BGM PLAY</button>
+          <div style="font-size: 9px; margin-top: 5px; min-height: 15px;" id="bgm-track-name">Stopped</div>
+        </div>
+
+        <hr style="border: 1px inset var(--border-color);">
+
+        <!-- 88x31 Web Badges -->
+        <div class="badges-container">
+          <div class="badge-item badge-ns">Netscape<br>Navigator</div>
+          <div class="badge-item badge-ie">Internet<br>Explorer</div>
+          <div class="badge-item badge-notepad">Notepad で<br>書いた</div>
+          <div class="badge-item badge-valid">CSS<br>VALID</div>
+          <div class="badge-item badge-any">ANY BROWSER<br>OK</div>
+        </div>
+      </nav>
+
+      <!-- Resize Bar Handle -->
+      <div id="resize-handle"></div>
+
+      <!-- RIGHT FRAME: Main Content Frame -->
+      <main id="content-frame">
+
+        <!-- 1. TOP PAGE SECTION -->
+        <section id="sec-top" class="content-section active">
+          
+          <div class="welcome-banner">ちひろ♂のホームページへようこそ</div>
+
+          <!-- Kiriban Notice Area -->
+          <div id="kiriban-notice" class="win95-window text-center" style="display: none; border: 3px double #ff00ff; background-color: #ffe6ff; color: #ff00ff; padding: 10px; margin-bottom: 20px;">
+          </div>
+
+          <div class="profile-photo-container">
+            <!-- Retro Profile SVG Portrait -->
+            <svg class="profile-photo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" fill="#202020"/>
+              <!-- Pixel portrait of a retro developer/admin -->
+              <rect x="25" y="30" width="50" height="50" fill="#c0a080" />
+              <rect x="20" y="55" width="60" height="35" fill="#404040" />
+              <rect x="25" y="20" width="50" height="20" fill="#101010" />
+              <rect x="35" y="45" width="8" height="6" fill="#000" />
+              <rect x="57" y="45" width="8" height="6" fill="#000" />
+              <rect x="43" y="60" width="14" height="4" fill="#ff0000" />
+              <!-- Retro sunglasses / specs -->
+              <rect x="30" y="40" width="40" height="8" fill="rgba(0, 255, 255, 0.7)" />
+              <text x="50" y="93" fill="#ffffff" font-size="7" text-anchor="middle" font-family="monospace">ちひろ♂</text>
+            </svg>
+            <div class="profile-details">
+              <p style="font-size: 14px; margin-top: 0; line-height: 1.5;">
+                いらっしゃいませ！ここは <strong>ちひろ♂</strong> の個人ホームページです。<br>
+                現代の巨大なSNSや肥大化したウェブサイトに抗い、90年代の爆速ロード精神を継承して作成しました。<br>
+                ぜひブックマークに登録してください！
+              </p>
+              <div style="font-size: 12px; margin-top: 10px; color: #ff0000; font-weight: bold;">
+                【最新情報】2026/06/01: サイトにCSSテーマ切り替え機能と、シンセサイザーによるMIDI BGM演奏システムを追加！
+              </div>
+            </div>
+          </div>
+
+          <!-- Animated Construction Zone (Inline SVG to avoid missing gif) -->
+          <div class="construction-zone">
+            <svg width="40" height="40" viewBox="0 0 100 100" style="vertical-align: middle; animation: spin-clockwise 4s linear infinite;" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="50,10 90,80 10,80" fill="#ffd700" stroke="#000" stroke-width="4"/>
+              <rect x="45" y="35" width="10" height="25" fill="#000"/>
+              <circle cx="50" cy="70" r="5" fill="#000"/>
+            </svg>
+            <span style="font-size: 20px; font-weight: bold; margin-left: 10px; vertical-align: middle;" class="blink">
+              Under Construction - 工事中
+            </span>
+            <svg width="40" height="40" viewBox="0 0 100 100" style="vertical-align: middle; animation: spin-clockwise 4s linear infinite;" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="50,10 90,80 10,80" fill="#ffd700" stroke="#000" stroke-width="4"/>
+              <rect x="45" y="35" width="10" height="25" fill="#000"/>
+              <circle cx="50" cy="70" r="5" fill="#000"/>
+            </svg>
+            <div style="font-size: 11px; margin-top: 5px;">このホームページは現在もNetscape Navigator 4.0で編集され続けています。</div>
+          </div>
+
+          <style>
+            @keyframes spin-clockwise {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+          </style>
+
+          <!-- News/History Table -->
+          <h3 style="border-bottom: 2px solid var(--border-color); padding-bottom: 3px;">📅 更新履歴 (Update History)</h3>
+          <table class="retro-table">
+            <thead>
+              <tr>
+                <th style="width: 120px;">日付</th>
+                <th>更新内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2026/06/01</td>
+                <td>テーマ切り替え機能（Raw, Vaporwave, Windows 95）を実装。Web Audio APIによる自動チップチューンBGMを搭載しました。</td>
+              </tr>
+              <tr>
+                <td>2026/05/31</td>
+                <td>ホームページ仮公開。掲示板（キリ番カウンター対応）を設置しました。</td>
+              </tr>
+              <tr>
+                <td>2026/05/30</td>
+                <td>ローカルマシンのメモ帳(Notepad)でHTMLコーディングを開始しました。</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="margin-top: 30px; text-align: center; font-size: 12px; color: #888;">
+            推奨ブラウザ：Netscape Communicator 4.7以上、解像度 1024x768 以上<br>
+            © 2026 ちひろ♂. All Rights Reserved.
+          </div>
+        </section>
+
+        <!-- 2. PROFILE SECTION -->
+        <section id="sec-profile" class="content-section">
+          <h2 style="border-bottom: 2px solid var(--border-color); padding-bottom: 5px;">👤 管理人プロフィール (About Me)</h2>
+          
+          <table class="retro-table" style="max-width: 600px; margin-top: 20px;">
+            <tr>
+              <th style="width: 150px;">ハンドルネーム</th>
+              <td>ちひろ♂ (電脳職人)</td>
+            </tr>
+            <tr>
+              <th>現在の職業</th>
+              <td>アンダーグラウンド・ウェブデベロッパー</td>
+            </tr>
+            <tr>
+              <th>血液型</th>
+              <td>B型 (マイペースと言われます)</td>
+            </tr>
+            <tr>
+              <th>生息地</th>
+              <td>日本のインターネットの深淵</td>
+            </tr>
+            <tr>
+              <th>愛用エディタ</th>
+              <td>Notepad (メモ帳), vi, たまに窓の杜で落としたTeraPad</td>
+            </tr>
+            <tr>
+              <th>好きなタグ</th>
+              <td><code>&lt;marquee&gt;</code>, <code>&lt;font color="red"&gt;</code>, <code>&lt;blink&gt;</code></td>
+            </tr>
+            <tr>
+              <th>趣味</th>
+              <td>HTMLの手打ち、MIDI鑑賞、テレホタイム中の夜間巡回</td>
+            </tr>
+            <tr>
+              <th>一言メッセージ</th>
+              <td>
+                今のウェブは重すぎます！当サイトのHTMLは、画像を除けばわずか数キロバイト。これぞインターネット初期のスピードです！
+              </td>
+            </tr>
+          </table>
+
+          <br>
+          <div class="win95-window" style="padding: 10px; margin-top: 20px; border: 1px dashed var(--border-color); max-width: 600px;">
+            <h4 style="margin: 0 0 5px 0;">⚡️ 自慢のPCスペック ⚡️</h4>
+            <ul style="font-size: 13px; margin: 0; padding-left: 20px; line-height: 1.5;">
+              <li>CPU: Intel Pentium III 500MHz</li>
+              <li>RAM: 128MB SDRAM</li>
+              <li>HDD: 10GB Ultra ATA</li>
+              <li>Modem: 56kbps アナログモデム (テレホタイムで大活躍)</li>
+              <li>OS: Windows 98 Second Edition</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 3. GUESTBOOK SECTION -->
+        <section id="sec-guestbook" class="content-section">
+          <h2 style="border-bottom: 2px solid var(--border-color); padding-bottom: 5px;">📝 掲示板 (Guestbook)</h2>
+          <p style="font-size: 13px;">
+            当サイトへの訪問記念にメッセージを残していってください！<br>
+            ※キリ番（下2桁が00やゾロ目など）を踏んだ方は、ぜひその旨も書き込んでくださいね！
+          </p>
+
+          <!-- Guestbook Input Form -->
+          <div class="guestbook-form win95-window">
+            <h3 style="font-size: 15px; margin-top: 0; margin-bottom: 10px; border-bottom: 1px solid var(--border-color); padding-bottom: 5px;">
+              署名する (書き込み)
+            </h3>
+            <form id="gb-form">
+              <div class="form-group">
+                <label for="gb-name">お名前 / Handle Name</label>
+                <input type="text" id="gb-name" class="form-input" placeholder="匿名希望" maxlength="20">
+              </div>
+              <div class="form-group">
+                <label for="gb-msg">メッセージ / Message <span class="text-danger">*</span></label>
+                <textarea id="gb-msg" class="form-textarea" required placeholder="こんにちは！記念カキコ！" maxlength="200"></textarea>
+              </div>
+              <div style="text-align: right;">
+                <button type="submit" class="bgm-btn" style="padding: 5px 15px;">送信する / Send</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Comments Feed -->
+          <h3 style="border-bottom: 2px solid var(--border-color); padding-bottom: 3px;">📖 過去の書き込み一覧</h3>
+          <div id="gb-list">
+            <!-- Will be populated dynamically by app.js -->
+          </div>
+        </section>
+
+        <!-- 4. LINKS SECTION -->
+        <section id="sec-links" class="content-section">
+          <h2 style="border-bottom: 2px solid var(--border-color); padding-bottom: 5px;">🔗 お気に入りリンク (Links)</h2>
+          <p style="font-size: 13px;">お世話になっているサイトや、管理人のオススメ巡回先です。（相互リンク大歓迎！）</p>
+
+          <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+            
+            <div class="win95-window" style="padding: 10px; display: flex; align-items: center; gap: 15px;">
+              <div class="badge-item badge-ns" style="flex-shrink: 0;">Abe Official</div>
+              <div>
+                <a href="http://abehiroshi.la.coocan.jp/" target="_blank" rel="noopener" style="font-weight: bold;">阿部 寛のホームページ</a>
+                <div style="font-size: 12px; margin-top: 4px;">本家・阿部寛様の公式サイト。爆速ロードの極みであり、すべてのレトロウェブ開発者の聖地です。</div>
+              </div>
+            </div>
+
+            <div class="win95-window" style="padding: 10px; display: flex; align-items: center; gap: 15px;">
+              <div class="badge-item badge-notepad" style="flex-shrink: 0; color: #000; background: #fff;">窓の杜</div>
+              <div>
+                <a href="https://forest.watch.impress.co.jp/" target="_blank" rel="noopener" style="font-weight: bold;">窓の杜 (Forest Watch)</a>
+                <div style="font-size: 12px; margin-top: 4px;">シェアウェア・フリーウェアを探すならここ！管理人は毎日新着ソフトをチェックしています。</div>
+              </div>
+            </div>
+
+            <div class="win95-window" style="padding: 10px; display: flex; align-items: center; gap: 15px;">
+              <div class="badge-item badge-valid" style="flex-shrink: 0; background: #3c763d;">W3C Markup</div>
+              <div>
+                <a href="https://validator.w3.org/" target="_blank" rel="noopener" style="font-weight: bold;">W3C Markup Validation Service</a>
+                <div style="font-size: 12px; margin-top: 4px;">正しいHTMLを書くためのバリデータ。当サイトも文法エラー0を目指し日々手直ししています。</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="border: 2px dashed var(--border-color); background-color: var(--frame-bg); padding: 15px; margin-top: 30px;">
+            <h4 style="margin: 0 0 5px 0;">当サイトへのリンクについて</h4>
+            <p style="font-size: 12px; margin: 0; line-height: 1.5;">
+              当サイトはリンクフリーです。どのページへも自由にリンクして構いません。<br>
+              バナー画像は用意していないため、テキストリンクでお願いします。<br>
+              紹介テキスト：<code>&lt;a href="index.html"&gt;ちひろ♂のぺーじ&lt;/a&gt;</code>
+            </p>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- FLOATING THEME SELECTOR WIDGET -->
+  <div id="theme-selector-widget" class="win95-window">
+    <div style="font-weight: bold; font-size: 9px; padding: 2px 4px; border-bottom: 1px solid var(--border-color);">
+      🎨 THEME SELECTOR
+    </div>
+    <div style="display: flex; gap: 4px; padding: 4px; background-color: var(--frame-bg);">
+      <button class="theme-selector-btn" id="theme-raw-btn">Raw Retro</button>
+      <button class="theme-selector-btn" id="theme-vapor-btn">Cyber Neon</button>
+      <button class="theme-selector-btn" id="theme-win95-btn">Win95 Desktop</button>
+    </div>
+  </div>
+
+</body>
+</html>
